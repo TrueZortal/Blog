@@ -1,0 +1,6 @@
+<h1>Posts are coming soon!</h1>
+<ul>
+<% @posts.each do |x| %>
+  <li><a href=<%="posts/#{x[:id]}"%>><%= x[:name] %></a></li>
+<% end %>
+</ul>
