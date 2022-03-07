@@ -15,10 +15,30 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @zmienna = destroy_post_path
+    # @zmienna = destroy_post_path
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to(@post)
+    else
+      render(:new)
+    end
   end
 
   def destroy
     @post = Post.find(params[:id])
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:name)
+  end
+
 end

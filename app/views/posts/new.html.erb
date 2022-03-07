@@ -1,0 +1,12 @@
+<h1>cos. Kurwa.</h1>
+
+<%= form_with model: @post do |form| %>
+  <%= form.label('Nazwa Posta:') %>
+  <%= form.text_field(:name) %>
+  <% @post.errors.full_messages_for(:name).each do |mesydz| %>
+    <div> <%= mesydz%> </div>
+  <% end %>
+  <%= form.submit('Zrob post lol') %>
+<% end %>
+
+<%= link_to 'get back!', posts_path %>
