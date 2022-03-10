@@ -1,7 +1,10 @@
 <h1>Posts are coming soon!</h1>
 <ul>
-<% @posts.each do |x| %>
-  <li><a href=<%="posts/#{x[:id]}"%>><%= x[:name] %></a></li>
+<% @posts.each do |post| %>
+  <li>
+    <a href=<%="posts/#{post[:id]}"%>><%= post[:name] %></a>
+    <%= link_to('DELETE', post, data: {turbo_method: :delete, turbo_confirm: 'czy pragniesz pozbawic sie tego wysmienitego posta?'}) %>
+  </li>
 <% end %>
 </ul>
 <%= link_to 'Nowy post', new_post_path %>
