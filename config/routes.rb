@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts
+  get('/poker', to: 'poker#show')
 
   # get('/posts', {to: 'posts#index'})
   # get '/posts/:id', to: 'posts#show'

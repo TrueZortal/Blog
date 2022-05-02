@@ -18,6 +18,8 @@ class PostsController < ApplicationController
     # @zmienna = destroy_post_path
   end
 
+
+
   def new
     @post = Post.new
   end
@@ -36,6 +38,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to(posts_path, status: :see_other)
   end
+
 
   private
 
